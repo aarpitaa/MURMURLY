@@ -1,0 +1,230 @@
+/* Main Styles */
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+.navbar {
+    background-color: white;
+    padding: 0.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn {
+    border: 2px solid white;
+    background-color: black;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
+}
+
+/* Create Post and Logout Buttons Styling */
+.create-post-btn, .logout-btn {
+    margin-left: auto;
+    font-size: 1rem;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.sort-btn {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Sort Button Dropdown Styling */
+.sort-dropdown {
+    background-color: black;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 40px; /* Adjust as needed */
+    left: 0;
+    width: 200px; /* Adjust width as needed */
+    z-index: 1000;
+}
+
+.sort-dropdown li {
+    padding: 10px 15px;
+    color: white;
+    cursor: pointer;
+    list-style: none;
+    transition: background-color 0.3s ease;
+}
+
+.sort-dropdown li:hover {
+    background-color: #333;
+}
+
+.sort-dropdown li:not(:last-child) {
+    border-bottom: 1px solid #555;
+}
+
+.hidden {
+    display: none;
+}
+
+.post-box {
+    border: 2px solid white;
+    border-radius: 15px;
+    width: 50%;
+    max-width: 800px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.post-box .like-container,
+.post-box .post-actions {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.post-box .like-container {
+    left: 10px;
+}
+
+.like-icon + .like-count, .sort-dropdown i {
+    margin-left: 5px;
+}
+
+.post-box .post-actions {
+    right: 10px;
+}
+
+.post-actions i {
+    color: white;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.post-actions i:hover {
+    color: grey;
+}
+
+hr {
+    border-color: white;
+    margin: 0.5rem 0;
+}
+
+.like-container {
+    display: flex;
+    align-items: center;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.pagination ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 5px;
+}
+
+.pagination a {
+    display: block;
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    border: 2px solid white;
+    text-decoration: none;
+}
+
+.pagination a:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 0.5rem;
+    background-color: white;
+    color: black;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Create Post Form Styling */
+.create-post-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 75%;
+    width: auto;
+    margin: auto;
+}
+
+.create-post-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: black;
+    font-weight: bold;
+}
+
+.create-post-form input[type="text"],
+.create-post-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.create-post-form #title-counter,
+.create-post-form #description-counter {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.create-post-form .btn {
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.create-post-form .btn:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}

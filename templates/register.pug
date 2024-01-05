@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Register - Microblogging Site
+    link(rel="stylesheet" href="/css/main.css")
+  body
+    main.login-container
+      form.login-form(action="/register" method="post")
+        h2 Please fill up all fields to register
+        input(type="text" name="fullname" placeholder="full name")
+        input(type="email" name="email" placeholder="email address")
+        input(type="password" name="password" placeholder="create password")
+        input(type="password" name="repassword" placeholder="re-enter password")
+        button(type="submit" class="register-btn") Create an account
+    footer
+      p &copy; 2023 Microblogging Site

@@ -1,0 +1,64 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title User Dashboard
+    link(rel='stylesheet' href='/css/dashboard.css')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css')
+  body
+    header.navbar
+      img(src="/images/logo.png" alt="Logo" class="logo")
+      a(href="/create-post", class="btn create-post-btn") Create Post
+      form(action="/logout" method="post")
+        button(type="submit" class="btn logout-btn") Logout
+
+    main.dashboard
+      button(class="btn sort-btn")
+        i.fa-solid.fa-sort
+        | Sort
+      ul.sort-dropdown.hidden
+        li Sort by:
+        li(data-sort="date")
+          i.fa-solid.fa-arrow-up-9-1
+          | Date
+        li(data-sort="likes")
+          i.fa-solid.fa-arrow-up-wide-short
+          | Likes
+
+      // Post listing
+      if posts && posts.length
+        each post, index in posts
+          div.post-box
+            h3.post-title(contenteditable="false" data-post-id=post.id) #{post.title}
+            hr
+            p.post-description(contenteditable="false" data-post-id=post.id) #{post.description}
+            hr
+            div.like-container
+              i.fa-regular.fa-heart.like-icon(data-post-id=post.id)
+              span.like-count(id=`like-count-${post.id}`) #{post.likes}
+            div.post-actions
+              i.fa-regular.fa-pen-to-square.edit-post(data-post-id=post.id, style='display: inline;')
+              i.fa-solid.fa-check.save-edit(data-post-id=post.id, style='display: none;')
+              i.fa-solid.fa-trash.delete-post(data-post-id=post.id)
+            
+      else
+        p No posts found.
+
+      // Pagination
+      if pageCount && pageCount > 1
+        nav.pagination
+          ul
+            li
+              a(href=`/dashboard?page=${currentPage > 1 ? currentPage - 1 : 1}&sort=${sort}`) «
+            - var i = 1;
+            while i <= pageCount
+              li
+                a(class=(currentPage == i ? 'active' : ''), href=`/dashboard?page=${i}&sort=${sort}`) #{i}
+                - i++;
+            li
+              a(href=`/dashboard?page=${currentPage < pageCount ? currentPage + 1 : pageCount}&sort=${sort}`) »
+    footer
+      p &copy; 2023 Microblogging Site
+    
+    script(src="/js/main.js")
